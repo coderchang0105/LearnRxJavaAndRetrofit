@@ -5,14 +5,14 @@ import java.util.List;
 /**
  * Created by coderchang on 16/10/17.
  */
-public class MovieEntity {
+public class HttpResult <T> {
   private int count;
   private int start;
   private int total;
-  private List<Subject> subjects;
+  private T subjects;
   private String title;
 
-  public MovieEntity(int count, int start, List<Subject> subjects, String title, int total) {
+  public HttpResult(int count, int start, T subjects, String title, int total) {
     this.count = count;
     this.start = start;
     this.subjects = subjects;
@@ -20,7 +20,7 @@ public class MovieEntity {
     this.total = total;
   }
 
-  public MovieEntity() {
+  public HttpResult() {
   }
 
   public int getCount() {
@@ -39,11 +39,11 @@ public class MovieEntity {
     this.start = start;
   }
 
-  public List<Subject> getSubjects() {
+  public T getSubjects() {
     return subjects;
   }
 
-  public void setSubjects(List<Subject> subjects) {
+  public void setSubjects(T subjects) {
     this.subjects = subjects;
   }
 
@@ -63,13 +63,4 @@ public class MovieEntity {
     this.total = total;
   }
 
-  @Override public String toString() {
-    return "MovieEntity{" +
-        "count=" + count +
-        ", start=" + start +
-        ", total=" + total +
-        ", subjects=" + subjects +
-        ", title='" + title + '\'' +
-        '}';
-  }
 }
